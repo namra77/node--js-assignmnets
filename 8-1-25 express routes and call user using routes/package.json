@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "name": "8-1-25-express-routes-and-call-user-using-routes",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

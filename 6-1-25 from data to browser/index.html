@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Simple Registration Form</h1>
+    <form id="registrationForm" method="GET" action="/">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Submitted Data</h2>
+    <pre id="output">No data submitted yet.</pre>
+
+    <script>
+        const output = document.getElementById('output');
+window.addEventListener('load', async () => {
+    const response = await fetch('/data');
+    if (response.ok) {
+        const jsonData = await response.json();
+        output.textContent = JSON.stringify(jsonData, null, 2);
+    }
+});
+
+    </script>
+</body>
+
+
+</html>
