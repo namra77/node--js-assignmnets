@@ -1,6 +1,7 @@
 // Importing required modules
 import express from 'express'
 const app = express();
+app.use(express.static('public'));
 
 // Set EJS as the templating engine
 app.set('view engine', 'ejs');

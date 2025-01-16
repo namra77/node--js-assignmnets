@@ -1,0 +1,56 @@
+/* General styles for the login and welcome pages */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .login-container, .welcome-container {
+    background: #fff; /* White background for the containers */
+    padding: 20px; /* Space inside the container */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    text-align: center; /* Center align text */
+  }
+  
+  h1 {
+    margin-bottom: 20px; /* Space below the header */
+  }
+  
+  form label {
+    display: block; /* Each label appears on its own line */
+    margin: 10px 0 5px; /* Spacing above and below labels */
+  }
+  
+  form input {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+  }
+  
+  form button {
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* No border for the button */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .error {
+    color: red; /* Red color for error messages */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-bottom: 15px; /* Space below the error message */
+  }
+  

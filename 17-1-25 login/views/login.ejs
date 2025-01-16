@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/public/style.css"> <!-- Link to the optional CSS file for styling -->
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+    
+    <!-- Display an error message if one exists -->
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    
+    <!-- Login form -->
+    <form action="/login" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required> <!-- Input for username -->
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required> <!-- Input for password -->
+      
+      <button type="submit">Login</button> <!-- Submit button -->
+    </form>
+  </div>
+</body>
+</html>
