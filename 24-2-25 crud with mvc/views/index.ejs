@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+  <div class="container">
+    <a href="/add" class="button">Add New Item</a>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% items.forEach(item => { %>
+          <tr>
+            <td><%= item.name %></td>
+            <td><%= item.description %></td>
+            <td>
+              <a href="/edit/<%= item._id %>" class="button">Edit</a>
+              <form action="/delete/<%= item._id %>" method="POST" style="display:inline;">
+                <button type="submit" class="button delete">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+<%- include('partials/footer') %>
