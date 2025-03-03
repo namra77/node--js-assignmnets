@@ -1,0 +1,20 @@
+{
+  "name": "mysql",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "eslint": "^9.21.0",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.2.2",
+    "routing-controllers": "^0.11.1"
+  }
+}
