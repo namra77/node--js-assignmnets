@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    #chat {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ccc;
+    }
+    #online-users {
+      padding: 10px;
+      background: #f0f0f0;
+      text-align: center;
+      font-weight: bold;
+    }
+    #form {
+      display: flex;
+      padding: 10px;
+    }
+    #input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #form button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #form button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="online-users">Online Users: 0</div>
+  <div id="chat"></div>
+  <form id="form">
+    <input id="input" autocomplete="off" placeholder="Type a message..." />
+    <button type="submit">Send</button>
+  </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // Update online users count
+    socket.on('update online users', (count) => {
+      document.getElementById('online-users').textContent = `Online Users: ${count}`;
+    });
+
+    // Display chat messages
+    const chat = document.getElementById('chat');
+    socket.on('chat message', (msg) => {
+      const messageElement = document.createElement('div');
+      messageElement.textContent = msg;
+      chat.appendChild(messageElement);
+      chat.scrollTop = chat.scrollHeight; // Auto-scroll to the latest message
+    });
+
+    // Send chat messages
+    const form = document.getElementById('form');
+    const input = document.getElementById('input');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit('chat message', input.value);
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
